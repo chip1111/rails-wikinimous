@@ -1,0 +1,20 @@
+<div class="container body-control">
+<h1>Welcome to Wikinomous</h1>
+
+<h3><%= link_to "Write an Article", new_article_path %></h3>
+
+<hr>
+
+<% @articles.each do |article| %>
+  </h2> <%= link_to article.title, article_path(article) %></h2>
+  <p><%= article.content.first(20) %>...</p>
+  <p><%= link_to "Edit", edit_article_path(article) %></p>
+  <p><%= link_to "Delete", article_path(article), method: :delete %></p>
+
+
+
+
+  <hr>
+
+<% end %>
+</div>

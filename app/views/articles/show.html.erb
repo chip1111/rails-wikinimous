@@ -1,0 +1,13 @@
+
+
+<h1><%= @article.title %></h1>
+
+<%= sanitize Kramdown::Document.new(@article.content).to_html %>
+
+<hr>
+
+<p><%= link_to "Edit this Article", edit_article_path(@article) %></p>
+
+<p><%= link_to "Delete this Article", article_path(@article), method: :delete %></p>
+
+<p><%= link_to "Back to Home", articles_path %></p>
